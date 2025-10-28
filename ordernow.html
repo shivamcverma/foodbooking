@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Now - FoodieBites</title>
+  <style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Fonts */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* Header */
+.header {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+  margin-top: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffd8c2;
+}
+
+/* Booking Section */
+.booking {
+  background-color: white;
+  padding: 50px 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.booking h2 {
+  font-size: 28px;
+  color: #ff6347;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Form Styling */
+.booking form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.booking input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.booking input:focus {
+  outline: none;
+  border-color: #ff6347;
+}
+
+/* Button Styling */
+.booking button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking button:hover {
+  background-color: #e5533d;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* Responsive: Optional */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking form {
+    width: 100%;
+  }
+}
+
+* Footer Styles */
+.footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 15px;
+  padding-top: 40px;
+}
+
+.footer .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #444;
+}
+
+/* Sections */
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #ff6347;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.footer-section p {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ff6347;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0.8);
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+/* Newsletter Form */
+.newsletter form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.newsletter input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.newsletter button {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.newsletter button:hover {
+  background-color: #e5533d;
+}
+
+/* Store Badges */
+.store-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.store-buttons img {
+  height: 40px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  background-color: #111;
+  text-align: center;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+  }
+
+  .newsletter input[type="email"],
+  .newsletter button {
+    width: 100%;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    float: none;
+    text-align: center;
+  }
+
+  .navbar ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    width: 80%;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">FoodieBites</h1>
+      <nav class="navbar">
+        <ul>
+          <li><a href="foodirestaurent.html">Home</a></li>
+          <li><a href="Dishes.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="booking">
+    <div class="container">
+      <h2>Book Your Meal</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="text" placeholder="Food Item" required />
+        <input type="number" placeholder="Quantity" required />
+        <input type="number" placeholder="Booking price">
+        <input type="number" placeholder="Contact">
+        <textarea name="adds" placeholder="Address"></textarea>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-main container">
+      <!-- Left: About / Logo -->
+      <div class="footer-section about">
+        <h3>FoodieBites</h3>
+        <p>Serving fresh and delicious meals since 2020. Order online, eat well!</p>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+        </div>
+      </div>
+
+      <!-- Center: Links -->
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Booking</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Right: Newsletter -->
+      <div class="footer-section newsletter">
+        <h4>Join Our Newsletter</h4>
+        <p>Stay updated with special offers & deals</p>
+        <form>
+          <input type="email" placeholder="Your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="store-buttons">
+          <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="App Store"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 FoodieBites. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+  

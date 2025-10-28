@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodieBites — Fresh & Fast</title>
+  <link rel="stylesheet" href="/Css/css2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="top-left">Free delivery above Rs. 499 • Open: 10:00 — 23:00</div>
+      <div class="top-right">Call us: +91 7355644796</div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="container header-grid">
+      <div class="logo">Foodie<span>Bites</span></div>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#chefs">Chefs</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost" id="open-cart">🛒 Cart <span id="cart-count">0</span></button>
+        <button class="btn primary" onclick="location.href='ordernow.html'">Order Now</button>
+        <button id="mobile-toggle" class="mobile-toggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1>Delicious meals, delivered fast.</h1>
+        <p>From classic comfort food to chef specials — order fresh, hot meals in minutes.</p>
+
+        <div class="search-box">
+          <input id="searchInput" placeholder="Search dishes, e.g. Pizza, Momos..." />
+          <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#menu" class="btn large">View Menu</a>
+          <a href="#offers" class="btn ghost">Today's Offers</a>
+        </div>
+
+        <div class="counters">
+          <div class="counter"><span data-target="12500">0</span>
+            <small>Orders Served</small>
+          </div>
+          <div class="counter"><span data-target="5800">0</span>
+            <small>Happy Customers</small>
+          </div>
+          <div class="counter"><span data-target="320">0</span>
+            <small>5★ Reviews</small>
+          </div>
+        </div>
+
+      </div>
+      <div class="hero-right">
+        <img src="Assests/momos.jpg" height="350px" alt="Hero Food">
+      </div>
+    </div>
+  </section>
+
+  <!-- Offers -->
+  <section id="offers" class="offers">
+    <div class="container">
+      <h2>Today's Specials</h2>
+      <div class="offers-grid" id="offersGrid">
+        <!-- Offer cards appended by JS or copy these blocks -->
+        <div class="offer-card">
+          <img src="Assests/pizza.jpg" alt="">
+          <h3>Pizza Combo</h3>
+          <p>Large pizza + 2 drinks</p>
+          <div class="price">Rs. 399 <span class="old">Rs. 550</span></div>
+          <button class="btn" data-name="Pizza Combo" data-price="399">Add to Cart</button>
+        </div>
+        <div class="offer-card">
+          <img src="Assests/Family Thali_0.jpg" alt="">
+          <h3>Family Thali</h3>
+          <p>4 veg dishes + roti + rice</p>
+          <div class="price">Rs. 649 <span class="old">Rs. 799</span></div>
+          <button class="btn" data-name="Family Thali" data-price="649">Add to Cart</button>
+        </div>
+        <div class="offer-card">
+          <img src="Assests/momos.jpg" alt="">
+          <h3>Momos Plate</h3>
+          <p>12 pcs + red Spicy chutney </p>
+          <div class="price">Rs. 149 <span class="old">Rs. 199</span></div>
+          <button class="btn" data-name="Momos Plate" data-price="149">Add to Cart</button>
+        </div>
+        <div class="offer-card">
+          <img src="Assests/chappan-bhog-the-ultimate.jpg" alt="">
+          <h3>Thali Combo</h3>
+          <p>Veg thali with 20 dishes</p>
+          <div class="price">Rs. 785 <span class="old">Rs. 890</span></div>
+          <button class="btn" data-name="Thali Combo" data-price="785">Add to Cart</button>
+        </div>
+        <div class="offer-card">
+          <img src="Assests/chili potato.jpg" alt="">
+          <h3>Chilli Potato</h3>
+          <p>Chilli potato + red Spicy chutney</p>
+          <div class="price">Rs. 159 <span class="old">Rs. 199</span></div>
+          <button class="btn" data-name="Chilli Potato" data-price="159">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2>Our Menu</h2>
+      <div class="menu-controls">
+        <button onclick="filterMenu('all')" class="btn small">All</button>
+        <button onclick="filterMenu('veg')" class="btn small ghost">Veg</button>
+        <button onclick="filterMenu('nonveg')" class="btn small ghost">Non-Veg</button>
+        <button onclick="filterMenu('dessert')" class="btn small ghost">Dessert</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Sample item -->
+        <div class="menu-item" data-type="veg">
+          <img src="Assests/pizza.jpg" alt="Pizza">
+          <div class="menu-body">
+            <h3>Cheese Pizza</h3>
+            <p>Thin crust, extra cheese.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 280</div>
+              <button class="btn" data-name="Cheese Pizza" data-price="280">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="nonveg">
+          <img src="Assests/burger.jpg" alt="Burger">
+          <div class="menu-body">
+            <h3>Chicken Burger</h3>
+            <p>Grilled patty with special sauce.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 120</div>
+              <button class="btn" data-name="Chicken Burger" data-price="120">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="veg">
+          <img src="Assests/pasta.png" alt="Pasta">
+          <div class="menu-body">
+            <h3>Italian Pasta</h3>
+            <p>Creamy garlic pasta.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 150</div>
+              <button class="btn" data-name="Italian Pasta" data-price="150">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="dessert">
+          <img src="Assests/ice--.png" alt="Ice Cream">
+          <div class="menu-body">
+            <h3>Chocolate Ice Cream</h3>
+            <p>Rich chocolate scoop.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 80</div>
+              <button class="btn" data-name="Chocolate Ice Cream" data-price="80">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2>Veg Dishes</h2>
+    
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Sample item -->
+        <div class="menu-item" data-type="veg">
+          <img src="Assests/vegbiryani.png" width="350px" alt="Pizza">
+          <div class="menu-body">
+            <h3>Veg Biryani</h3>
+            <p>Fresh and healthy Biryani with rayta and chutney </p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 280</div>
+              <button class="btn" data-name="Veg Biryani" data-price="280">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="nonveg">
+          <img src="Assests/pav-bhaji.jpeg" alt="Burger">
+          <div class="menu-body">
+            <h3>Pav Bhaji</h3>
+            <p>Extra Butter and fresh vegetables Bhaji</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 150</div>
+              <button class="btn" data-name="Pav Bhaji" data-price="150">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="veg">
+          <img src="Assests/dosa.jpg" alt="Pasta">
+          <div class="menu-body">
+            <h3>Masala Dosa </h3>
+            <p>Masala Dosa with Spicy potato filling and chutney</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 150</div>
+              <button class="btn" data-name="Masala Dosa" data-price="150">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="dessert">
+          <img src="Assests/paner paratha.png" alt="Ice Cream">
+          <div class="menu-body">
+            <h3>Paneer Paratha</h3>
+            <p>Stuffed with spiced paneer, served with yogurt.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 100</div>
+              <button class="btn" data-name="Paneer Paratha" data-price="100">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <div class="container">
+    <h2>Non-Veg Dishes</h2>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Sample item -->
+        <div class="menu-item" data-type="veg">
+          <img src="Assests/chicken kebab.jpg" alt="Pizza">
+          <div class="menu-body">
+            <h3>Chicken kebab</h3>
+            <p>Tender chicken pieces marinated in spices.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 280</div>
+              <button class="btn" data-name="Chicken kebab" data-price="280">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="nonveg">
+          <img src="Assests/burger.jpg" alt="Burger">
+          <div class="menu-body">
+            <h3>Chicken Burger</h3>
+            <p>Grilled patty with special sauce.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 120</div>
+              <button class="btn" data-name="Chicken Burger" data-price="120">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="veg">
+          <img src="Assests/air-fryer-chicken-nuggets-8.jpg" width="500px" alt="Pasta">
+          <div class="menu-body">
+            <h3>Chicken Nuggets</h3>
+            <p>Crispy chicken nuggets with a side of dipping sauce.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 200</div>
+              <button class="btn" data-name="Chicken Nuggets" data-price="200">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" data-type="dessert">
+          <img src="Assests/chicken-Biryani.jpg" alt="Ice Cream">
+          <div class="menu-body">
+            <h3>Chicken Biryani</h3>
+            <p>Fragrant basmati rice with spiced chicken.</p>
+            <div class="menu-bottom">
+              <div class="price">Rs. 270</div>
+              <button class="btn" data-name="Chicken Biryani" data-price="270">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Chefs -->
+  <section id="chefs" class="chefs">
+    <div class="container">
+      <h2>Meet Our Chefs</h2>
+      <div class="chefs-grid">
+        <div class="chef">
+          <img src="Assests/master_chef.jpg" alt="Chef 1">
+          <h4>Chef Anil</h4>
+          <small>Head Chef - Indian Cuisine</small>
+        </div>
+        <div class="chef">
+          <img src="Assests/master_chef.jpg" alt="Chef 2">
+          <h4>Chef Ananat</h4>
+          <small>Veg Dishes Specialist</small>
+        </div>
+        <div class="chef">
+          <img src="Assests/master_chef.jpg" alt="Chef 3">
+          <h4>Chef Rahul</h4>
+          <small>Non-Veg Dishes Expert</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="Assests/pizza.jpg" alt="">
+        <img src="Assests/burger.jpg" height="115px" alt="">
+        <img src="Assests/momos.jpg" alt="">
+        <img src="Assests/pasta.png" alt="">
+        <img src="Assests/icecream.jpg" height="115px" width="200px" alt="">
+        <img src="Assests/chili potato.jpg" width="200px" height="115px" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-q">How long does delivery take?</button>
+        <div class="faq-a">Typically 30–45 minutes depending on location and traffic.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you have contactless delivery?</button>
+        <div class="faq-a">Yes — choose contactless option at checkout.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I cancel my order?</button>
+        <div class="faq-a">Orders can be cancelled within 5 minutes of placement.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <h2>Book Your Table / Order</h2>
+      <form id="bookingForm" class="booking-form">
+        <div class="grid-2">
+          <input type="text" id="bname" placeholder="Your Name" required>
+          <input type="email" id="bemail" placeholder="Email Address" required>
+        </div>
+        <div class="grid-2">
+          <input type="text" id="bitem" placeholder="Food Item" required>
+          <input type="number" id="bqty" placeholder="Quantity" required min="1">
+        </div>
+        <textarea id="bnotes" placeholder="Additional notes (optional)"></textarea>
+        <button class="btn primary" type="submit">Book Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div>
+        <h2>Contact Us</h2>
+        <p>Reach out for bookings, feedback or bulk orders.</p>
+        <ul class="contact-list">
+          <li>Email: hello@foodiebites.com</li>
+          <li>Phone: +91 7355644796</li>
+          <li>Address: 123 Food Street, Prayagraj Uttar Pradesh</li>
+        </ul>
+
+        <div class="map-wrapper">
+          <!-- Replace src with your Google Maps iframe or static map -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14003.123456789!2d77.2090!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM2JzUwLjAiTiA3N8KwMTInMDYuMCJF!5e0!3m2!1sen!2sin!4v1620000000000"
+            width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div>
+        <h3>Subscribe</h3>
+        <p>Get offers & updates</p>
+        <form id="subForm" class="subscribe">
+          <input type="email" id="subEmail" placeholder="Enter email" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer class="footer">
+    <div class="footer-main container">
+      <!-- Left: About / Logo -->
+      <div class="footer-section about">
+        <img src="Assests/payal.jpg" height="80px" alt="">
+        <h3>FoodieBites</h3>
+        <p>Serving fresh and delicious meals since 2020. Order online, eat well!</p>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+        </div>
+      </div>
+
+      <!-- Center: Links -->
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Booking</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Right: Newsletter -->
+      <div class="footer-section newsletter">
+        <h4>Join Our Newsletter</h4>
+        <p>Stay updated with special offers & deals</p>
+        <form>
+          <input type="email" placeholder="Your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="store-buttons">
+          <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="App Store"></a>
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"></a>
+        </div>
+      </div>
+    </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© 2025 FoodieBites. All rights reserved.</div>
+      <div>Made with ❤️ by FoodieBites Team</div>
+    </div>
+  </footer>
+
+  <!-- <script src="script.js"></script> -->
+
+   <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68d0427d89caa6192613cb67/1j5mo7evk';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<script src="/Js/script.js"></script>
+
+</body>
+
+</html>
+
+
