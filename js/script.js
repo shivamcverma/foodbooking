@@ -73,14 +73,14 @@ function addToCart(name, price) {
 }
 
 // Attach add-to-cart buttons
-document.querySelectorAll('button[data-name]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const name = btn.dataset.name;
-    const price = btn.dataset.price;
-    addToCart(name, price);
-    showCartModal();
-  });
-});
+// document.querySelectorAll('button[data-name]').forEach(btn => {
+//   btn.addEventListener('click', () => {
+//     const name = btn.dataset.name;
+//     const price = btn.dataset.price;
+//     addToCart(name, price);
+//     showCartModal();
+//   });
+// });
 
 // Cart modal
 let cartModal;
