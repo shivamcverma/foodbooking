@@ -72,15 +72,15 @@ function addToCart(name, price) {
   updateCartCount();
 }
 
-// Attach add-to-cart buttons
-// document.querySelectorAll('button[data-name]').forEach(btn => {
-//   btn.addEventListener('click', () => {
-//     const name = btn.dataset.name;
-//     const price = btn.dataset.price;
-//     addToCart(name, price);
-//     showCartModal();
-//   });
-// });
+Attach add-to-cart buttons
+document.querySelectorAll('button[data-name]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const name = btn.dataset.name;
+    const price = btn.dataset.price;
+    addToCart(name, price);
+    showCartModal();
+  });
+});
 
 // Cart modal
 let cartModal;
@@ -177,15 +177,15 @@ document.getElementById('subForm')?.addEventListener('submit', (e) => {
   });
 
   // Re-attach add-to-cart listeners
-  document.querySelectorAll('button[data-name]').forEach(btn => {
-    if (!btn.dataset.listener) {
-      btn.dataset.listener = true;
-      btn.addEventListener('click', () => {
-        addToCart(btn.dataset.name, btn.dataset.price);
-        showCartModal();
-      });
-    }
-  });
+  // document.querySelectorAll('button[data-name]').forEach(btn => {
+  //   if (!btn.dataset.listener) {
+  //     btn.dataset.listener = true;
+  //     btn.addEventListener('click', () => {
+  //       addToCart(btn.dataset.name, btn.dataset.price);
+  //       showCartModal();
+  //     });
+  //   }
+  // });
 })();
 
 // small accessibility: focus outlines
